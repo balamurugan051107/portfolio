@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+   body {
+  background: repeating-linear-gradient(
+      120deg,
+      #e9ecef 0px,
+      #e9ecef 2px,
+      transparent 2px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      240deg,
+      #f3f8fd 0px,
+      #f3f8fd 2px,
+      transparent 2px,
+      transparent 40px
+    );
+  background-size: 80px 80px;
+  background-attachment: fixed;
+  cursor: url(pointer.png), auto;
+  animation: moveBG 7s linear infinite;
+}
+@keyframes moveBG {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 160px 160px, -160px -160px;
+  }
+}
+    .logo{
+        background-color: rgba(9, 9, 9, 0.973);
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+      transition: color 0.3s,;
+      background: linear-gradient(to right, #21b1f3, #a775d2, #2343cf, #cc44ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover, 
+    .navbar-dark .navbar-nav .nav-link:focus {
+      color: #fff;
+      background: linear-gradient(to right, #eac717, #becf23, #b2ee44, #ff3c6f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .name-gradient {
+      font-size: 15px;
+      font-weight: bold;
+      background: linear-gradient(to right, #cd8a53, #ce75ac, #a4cd01, #764ada,#75bbce,#d43636);
+      background-size: 500% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 4s ease-in-out infinite alternate;
+      word-spacing: 10px;
+    }
+    .nav-link{
+        font-size: 15px;
+        font-weight: bold;
+        background: linear-gradient(to right, #21b1f3, #a775d2, #2343cf, #cc44ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    @keyframes textShine {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }     
+    .image-hover {
+      position: relative;
+      width: 290px;
+      height: 350px;
+      border-radius: 20%;
+      float: right;
+      overflow: hidden;
+    }
+    .image-hover img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      border-radius: 20%;
+    }
+    .image-hover .main-img {
+      opacity: 1;
+      z-index: 1;
+      filter: none;
+      transition: 
+    }
+    .image-hover .hover-img {
+      opacity: 0;
+      z-index: 2;
+      transform: scale(1.2);
+      pointer-events: none;
+    }
+    .image-hover:hover .main-img {
+      opacity: 1;
+      filter: blur(5px);
+    }
+    .image-hover:hover .hover-img {
+      opacity: 1;
+      transform: scale(1.55);
+      transition: 1s;
+    }
+    .image-hover .caption {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      color: rgba(15, 12, 12, 0.849);
+      background: linear-gradient(to right, #eac717, #becf23, #b2ee44);
+      text-align: center;
+      padding: 10px;
+      transition: bottom 0.5s ease;
+      z-index: 3;
+    }
+    .image-hover:hover .caption {
+      bottom: 0;
+    }
+    .intro{
+        margin-left: 30px;
+        padding-left: 30px;
+    }
+    @media screen and (max-width: 422px) {
+      .main-img{
+        width: 190px;
+        height: 250px;
+      }
+      .image-hover {
+        position: relative;
+        width: 190px;
+        height: 250px;
+        border-radius: 20%;
+        float: right;
+        overflow: hidden;
+      }
+    }
+    .ab{
+      border-radius: 30px;
+      margin-left: 20px;
+      padding-left: 20px;
+      margin-right: 20px;
+      padding-right: 20px;
+      color: white;
+      padding-right: 20px;
+      color: rgb(5, 5, 5);
+      border: 1px 
+    }
+    #skills{
+      border-radius: 30px;
+      margin-left: 20px;
+      padding-left: 20px;
+      margin-right: 20px;
+      padding-right: 20px;
+      color: rgb(17, 17, 17);
+      border: 1px 
+    }
+    .front:hover{
+      background-color: bisque;
+    }
+    .about-img {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border-radius: 20%;
+      overflow: hidden;
+    }
+    @media screen and (max-width: 422px) {
+      .about-hover {
+        width: 190px;
+        height: 250px;
+      }
+    }
+    .new-hover {
+      position: relative;
+      width: 290px;
+      height: 350px;
+      border-radius: 20%;
+      float: right;
+      overflow: hidden;
+    }
+    .new-hover img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      border-radius: 20%;
+    }
+    .new-hover .main-img {
+      opacity: 1;
+      z-index: 1;
+      filter: none;
+      transition: 
+    }
+    .new-hover:hover {
+      transform: rotate(20deg);
+      transition: 2s;
+    }
+    .skill-logo {
+      transition: transform 0.4s cubic-bezier(.36,2,.57,.46), box-shadow 0.4s;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+    }
+    .skill-logo:hover {
+      transform: scale(1.17) rotate(-8deg);
+      box-shadow: 0 6px 36px 0 rgba(68, 220, 255, 0.24), 0 1.5px 20px 0 rgba(94, 30, 255, 0.12);
+      z-index: 2;
+      filter: drop-shadow(0 0 12px #21b1f3);
+    }
+    @media (max-width: 767px) {
+      .skill-logo {
+        width: 75px !important;
+        height: 75px !important;
+      }
+    }
+    .animated-heading {
+      display: inline-block;
+      position: relative;
+      color: #eac717 !important;
+      text-shadow: 0 2px 24px #21b1f3, 0 4px 54px #d43636;
+      transform: scale(1.07) rotate(-2deg) skew(-2deg, 2deg);
+      background: linear-gradient(90deg, #eac717, #ea65f3, #45e7f7, #fbc2eb);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 10px #fff7c4);
+      animation: headingAnim 1.7s cubic-bezier(.68,-0.55,.27,1.55) forwards, headingGradientAnim 7s ease-in-out infinite alternate;
+      z-index: 1;
+      letter-spacing: normal;
+    }
+    .project {
+        background-color: #222222b3;
+        margin: 30px 0;      
+        padding: 30px 15px;  
+        border-radius: 20px; 
+        color: white;
+        max-width: 500px;   
+        box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+}
+.animated-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #21b1f3, #a775d2, #2343cf, #cc44ee);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 3px 18px 0 rgba(33,177,243,0.20);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background-position 1.2s;
+  background-size: 300% 100%;
+  background-position: left;
+  text-decoration: none;
+}
+.animated-btn:hover, .animated-btn:focus {
+  transform: scale(1.07) translateY(-3px);
+  background-position: right;
+  box-shadow: 0 6px 36px 0 rgba(68, 220, 255, 0.24), 0 1.5px 20px 0 rgba(94, 30, 255, 0.12);
+  color: #fff;
+  text-decoration: none;
+}
+.project-img:hover {
+ transform: skew(-5deg, 1deg);
+}
+#sports:hover{
+  transform: scale(1.05);
+  transition: 2s;
+
+}
+.prize:hover{
+  transform: scale(1.15);
+}
+  </style>
+</head>
+<body>
+  <button class="pointer">Pointer Cursor</button>
+  <div class="custom-cursor">Custom Image Cursor</div>
+<nav class="navbar navbar-expand-md navbar-dark logo fixed-top">
+  <a class="navbar-brand" href="#">
+    <img src="bmpointer.jpg" Bala Murugan alt="logo" class="brand" style="width:40px; ">
+  </a>
+  <b class="name-gradient"><center style="color: rgb(138, 148, 113);">B A L A  M U R U G A N</center></b>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#Home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#About">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Skills">Skills</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#projects">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Achievements">Achievements</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav><br><br><br><br>
+<div id="Home" class="image-hover" style="margin-right: 120px;padding-right: 120px;">
+  <img src="me1.jpg" alt="Image"class="main-img">
+  <img src="me1-removebg-preview.png" alt="Hover Image" class="hover-img">
+  <div class="caption">MYSELF <BR> BALAMURUGAN</div> 
+</div><br><br><br>
+<div class="intro">
+  <h1 class="animated-heading">WELCOME</h1><br><br><br>
+  <h2>I'M M.BALAMURUGAN</h2>
+  <h3>Computer Science Engineering Student </h3><br><br>
+  <a href="resume2.jpg" target="_blank" class="animated-btn">MY RESUME</a>
+</div>
+<div class="ab" id="About">
+  <br><br><br><br><hr>
+  <center>
+    <h1 class="animated-heading" style="margin-left:10px;padding-left: 10px;margin-right:10px;padding-right: 10px; background-color: rgba(0, 0, 0, 0.881); color: azure;">
+      ABOUT
+    </h1><hr>
+  </center>
+  <br><br>
+  <div class="row align-items-center">
+    <div class="col-12 col-md-5 d-flex justify-content-center mb-4 mb-md-0">
+      <div class="new-hover about-hover mx-auto">
+        <img src="me2.jpg" alt="About Image" class="main-img">
+        <img src="me2.jpg" alt="About Hover Image" class="hover-img">
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <h2 class="animated-heading">PERSONAL INFORMATION:-</h2>
+      <br><br>
+      <h3>Full Name : Balamurugan Muruganandam</h3>
+      <h3>Date Of Birth : 05/11/2007</h3>
+      <h3>Age : 17</h3>
+      <h3>Education : BE (CSE)
+      </h3>
+    </div>
+  </div>
+  <br><br>
+</div>
+<h6 style="margin-left:3px;padding-left:3px; ">
+I am Balamurugan s/o Muruganandam and Kavitha.I was born on 05/11/2007 in Mumbai and I complete my senior secondary and higher secondary in SBOA Mtric hr sec school, A well reputed school in Coimbatore and I am a first year CSE student in Sri Krishna College of Engieering and Technology (SKCET).I will complete my graduation in the year 2029.I curruntly pursuing full stack java course in Appin Technology,Coimbatore. In future would like become a Data Analyst and Cloud Engineer which is my passion.I enjoy exploring the vast world of computing and continuously strive to broaden my knowledge and skills.
+- Fascinated by areas like Artificial Intelligence, Web Development, and Data Structures & Algorithms.
+- Always eager to learn about emerging technologies and the latest trends in computer science.
+- Worked on various academic and personal projects, including building web applications and automation scripts.
+- Completed online courses on Data Science, Machine Learning, and Web Development from platforms like Coursera and Udemy.
+- Strong communication and leadership abilities, developed through group projects and extracurriculars.
+My goal is to leverage my skills to solve real-world problems and contribute meaningfully to the tech community. I aspire to work in a challenging environment where I can grow as a software developer and make a positive impact.
+Apart from coding, I love playing chess, reading tech blogs, and participating in tech communities. I also enjoy blogging and sharing knowledge with peers.
+</h6> <br>
+  </div><br><br>
+ <div id="Skills">
+  <center><hr>
+    <h1 class="animated-heading" style="margin-left:10px;padding-left: 10px;margin-right:10px;padding-right: 10px; background-color: rgba(0, 0, 0, 0.881); color: azure">SKILLS</h1><br><hr>
+    <h2 class="front" style="background-color: beige;">FRONT END</h2><br>
+    <div class="idk" style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+      <div style="text-align: center;">
+        <img src="html.png" alt="HTML" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4>HTML</h4>
+      </div>
+      <div style="text-align: center;">
+        <img src="css.png" alt="CSS" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4>CSS</h4>
+      </div>
+      <div style="text-align: center;">
+        <img src="bootstrap.png" alt="Bootstrap" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4>BOOTSTRAP</h4>
+      </div>
+      <div style="text-align: center;">
+        <img src="js.png" alt="JavaScript" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4 >JAVA SCRIPT</h4>
+      </div>
+    </div>
+    <br><br><br>
+    <h2 class="front" style="background-color: beige;">BACK END</h2><br>
+    <div class="idk" style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+      <div style="text-align: center;">
+        <img src="java.png" alt="Java" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4>JAVA</h4>
+      </div>
+      <div style="text-align: center;">
+        <img src="python.png" alt="Python" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4>PYTHON</h4>
+      </div>
+      <div style="text-align: center;">
+        <img src="c++.png" alt="C++" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4 >C++</h4>
+      </div>
+    </div>
+    <br><br><br>
+    <h2 class="front" style="background-color: beige;">DATABASE</h2><br>
+    <div class="idk" style="display: flex; justify-content: center; align-items: center;">
+      <div style="text-align: center;">
+        <img src="mysql.png" alt="MySQL" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4>MYSQL</h4>
+      </div>
+    </div><br><br><br>
+    <h2 class="front" style="background-color: beige;">EXTRA SKILLS</h2><br>
+     <div class="idk" style="display: flex; justify-content: center; align-items: center;">
+      <div style="text-align: center;">
+        <img src="AI.png" alt="AI" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <img src="GOOGLE.png" alt="Google" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4>Artificial Intelligence course from Google</h4><br>
+        <img src="cloud.png" alt="Cloud" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <img src="amazon.png" alt="Amazon" class="img-fluid skill-logo" style="width: 100px; height: 100px;">
+        <h4>Cloud computing course from Amazon</h4>
+      </div>
+  </center>
+</div><br><br><br>
+ <div id="projects">
+  <center><hr>
+    <h1 class="animated-heading" style= "margin-left:15px;padding-left: 15px;margin-right:20px;padding-right: 20px; background-color: rgba(0, 0, 0, 0.881); color: azure;">MY PROJECTS</h1><br><hr>
+    <h3 style="color: coral">A selection of my range of work</h3><br>
+    <h2 style="color: black;background-color: beige;">My First Ever Project- BM UNIVERSITY</h2>
+    <div class="project">
+      <h2 style="color: lightcyan;">University Portal</h2>
+     <img src="UNIVERSITY.jpg" class="project-img" style="width: 300px; height: 250px; border-radius: 20px;">
+      <h4 style="color: lightcyan;">Responsive web portal for university management</h4>
+      <h4 style="color: lightcyan;">build using</h4>
+      <span style="font-size: larger;"class="badge badge-warning">HTML</span>
+      <span style="font-size: larger;"class="badge badge-secondary">CSS</span>
+      <span style="font-size: larger;" class="badge badge-light">Bootstrap</span><br><br>
+      <a href="newweb.html" target="_blank" class="animated-btn">Give a Glance</a>
+    </div>
+    <h2 style="color: black;background-color: beige;">My First Ever Portfolio website</h2>
+    <div class="project">
+      <h2 style="color: lightgoldenrodyellow;">My Portfolio Website</h2>
+      <img src="myphoto.jpg"class="project-img" style="width: 300px; height: 250px; border-radius: 20px;">
+      <h4  style="color: lightgoldenrodyellow;">Responsive website about me</h4>
+      <h4 style="color: lightgoldenrodyellow;">build using</h4>
+      <span style="font-size: larger;" class="badge badge-dark">HTML</span>
+      <span style="font-size: larger;" class="badge badge-info">CSS</span>
+      <span style="font-size: larger;" class="badge badge-danger">Bootstrap</span><br><br>
+      <a href="port.html" target="_blank" class="animated-btn">currenly on the site</a>
+    </div><br><br>
+  </center>
+</div>
+<div id="Achievements">
+  
+  <center><hr>
+    <h1 class="animated-heading" style="margin-left:15px;padding-left: 15px;margin-right:20px;padding-right: 20px; background-color: rgba(0, 0, 0, 0.881); color: azure;">ACHIEVEMENTS</h1><br><hr>
+    <h2 style="font-family:Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); background-color: beige;" >Excellence Of Sports</h2><br>
+    <div class="row justify-content-center" style="gap: 30px; margin-top: 30px;">
+      <div class="prize">
+      <div class="card shadow" style="width: 20rem; border-radius: 18px; background-color: orange;">
+        <div class="text-center">
+          <img src="trophy.png" alt="Trophy" style="width:60px; margin-bottom:12px;">
+          <h4 style="color:#b644c0;">Best All Rounder in u17 cricket</h4>
+          <h6>Highlights Academy</h6>
+          <p>Awarded for outstanding performance in academics, sports, and extracurricular activities.</p>
+        </div>
+      </div>
+      </div>
+      <div class="prize">
+      <div class="card shadow" style="width: 20rem; border-radius: 18px;">
+        <div class="text-center">
+          <img src="third.png" alt="Karate" style="width:60px; margin-bottom:12px;">
+          <h4 style="color:#3951bf;">3rd Place - National Karate Championship</h4>
+          <h6>India</h6>
+          <p>Secured 3rd place at the  National Level Karate Championship, showcasing skill and determination.</p>
+        </div>
+      </div>
+      </div>
+      <div class="prize">
+      <div class="card shadow" style="width: 20rem; border-radius: 18px;background-color: green;">
+        <div class="text-center">
+          <img src="second.png" alt="Karate" style="width:60px; margin-bottom:12px;">
+          <h4 style="color:#eac717;">2nd Place - State Karate Championship</h4>
+          <h6>Tamil Nadu</h6>
+          <p>secured 2nd place in the State Level Karate Championship, demonstrating excellence in martialarts.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </center><br><br><br> 
+  <center>
+</div></center>
+</div><br><hr>
+<footer class="bg-dark text-light pt-4 pb-3" style="background: rgba(15, 15, 15, 0.92); margin-top: 60px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-2">
+        <h5 class="text-uppercase mb-3 animated-heading" id="contact" style="letter-spacing:2px; color: #eac717;">Contact Me</h5><br><br>
+        <ul >
+          <li>
+           <b>Email:</b> <a href="mailto:balamurugan051107@gmail.com" style="color: #21b1f3;">balamurugan051107@gmail.com</a>
+          </li>
+          <li>
+            <b>Phone:</b> <a href="tel:+919876543210" style="color: #21b1f3;">+91 98765 43210</a>
+          </li>
+          <li>
+            <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/balamurugan051107" target="_blank" style="color: #21b1f3;">linkedin.com/in/balamurugan051107</a>
+          </li>
+           <li>
+            <b>whatsapp:</b> <a href="9876543210" target="_blank" style="color: #21b1f3;">9876543210</a>
+          </li>
+           <li>
+            <b>Instagram</b> <a href="@bm_.41._" target="_blank" style="color: #21b1f3;">@bm_.41._</a>
+          </li>
+           <li>
+            <b>Facebook</b> <a href="@balamuruagan" target="_blank" style="color: #21b1f3;">@balamuruagan</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6 mb-3">
+        <form>
+          <div class="form">
+            <label for="contactName">Name</label>
+            <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required>
+          </div>
+          <div class="form">
+            <label for="contactEmail">Email address</label>
+            <input type="email" class="form-control" id="contactEmail" placeholder="Enter email" required>
+          </div>
+          <div class="form">
+            <label for="contactMessage">Message</label>
+            <input class="form-control" id="contactMessage" rows="2" placeholder="Your message" required></input>
+          </div><br><br>
+          <button type="submit" class="btn btn-warning" style="color: #222; font-weight: bold;">Send</button>
+        </form>
+      </div>
+    </div>
+    <hr style="background-color: #444;">
+    <div>
+      <div class="col text-center" style=" background-color: #222; ">
+        <small>&copy; 2025 Bala Murugan. All Rights Reserved.</small>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
